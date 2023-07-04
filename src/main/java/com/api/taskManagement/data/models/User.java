@@ -3,27 +3,21 @@ package com.api.taskManagement.data.models;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "users", uniqueConstraints = {
         @UniqueConstraint(columnNames = {
                 "username"
         }),
-        @UniqueConstraint(columnNames = {
-                "email"
-        })
 })
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Builder
 //@Entity
 //@Table(name = "users")
 public class User{
@@ -32,6 +26,8 @@ public class User{
     private long id;
     private String username;
     private String password;
+
+    private List <Role_Name> role;
 
 
 //

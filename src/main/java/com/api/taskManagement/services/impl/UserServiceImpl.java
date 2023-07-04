@@ -1,41 +1,84 @@
 package com.api.taskManagement.services.impl;
 
+import com.api.taskManagement.data.dto.request.UserLoginRequest;
+import com.api.taskManagement.data.dto.request.UserRegistrationRequest;
 import com.api.taskManagement.data.models.User;
 import com.api.taskManagement.data.repository.UserRepository;
-import com.api.taskManagement.exception.UsernameAlreadyExistsException;
 import com.api.taskManagement.services.UserService;
-import lombok.RequiredArgsConstructor;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+import java.util.Date;
+
 @Service
-@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
 
-//    @Autowired
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Autowired
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
-        this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
-    }
-
-    public void registerUser(User user) throws UsernameAlreadyExistsException {
-        if (userRepository.findByUsername(user.getUsername()) != null) {
-            throw new UsernameAlreadyExistsException("Username already exists");
+    @Override
+    public void registerUser(UserRegistrationRequest request) {
+        // Check if the username is already taken
+        if (userRepository.findByUsername(request.getUsername()) != null) {
+            throw new RuntimeException("Username already exists");
         }
 
-        User newUser = new User();
-        newUser.setUsername(user.getUsername());
-        String hashedPassword = passwordEncoder.encode(user.getPassword());
-        newUser.setPassword(hashedPassword);
+        // Create a new User entity
+        User user = new User();
+        user.setUsername(request.getUsername());
+        // Hash the password before storing it in the database
+        String hashedPassword = passwordEncoder.encode(request.getPassword());
+        user.setPassword(hashedPassword);
 
-        userRepository.save(newUser);
+        // Save the user to the database
+        userRepository.save(user);
+    }
+
+    // Generate JWT token
+    @Override
+    public String loginUser(UserLoginRequest request) {
+        // Retrieve user from the database based on the username
+        User user = userRepository.findByUsername(request.getUsername());
+        if (user == null) {
+            throw new RuntimeException("User not found");
+        }
+
+        // Check if the provided password matches the stored password
+        if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+            throw new RuntimeException("Invalid password");
+        }
+
+        // Generate JWT token
+        String token = generateJwtToken(user.getUsername());
+
+        return token;
+    }
+
+    private String generateJwtToken(String username) {
+        // Set expiration time for the token (e.g., 1 hour)
+        long expirationTimeInMillis = 60 * 60 * 1000; // 1 hour
+        Date expiryDate = new Date(System.currentTimeMillis() + expirationTimeInMillis);
+
+        // Create claims for the token
+        Claims claims = Jwts.claims().setSubject(username);
+        claims.put("scopes", Arrays.asList("ROLE_USER")); // Set user roles/scopes if needed
+
+        // Generate the token
+        String token = Jwts.builder()
+                .setClaims(claims)
+                .setExpiration(expiryDate)
+                .signWith(SignatureAlgorithm.HS256, "yourSecretKey") // Replace "yourSecretKey" with your own secret key
+                .compact();
+
+        return token;
     }
 
 }
