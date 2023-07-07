@@ -1,11 +1,13 @@
 package com.api.taskManagement.data.models;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -24,20 +26,23 @@ public class User{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @NotBlank
+    @Size(min=3, max = 50)
     private String username;
+
+    @NotBlank
+    @Size(min=6, max = 100)
     private String password;
 
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "role_name",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
     private List <Role_Name> role;
 
 
-//
-//    @NotBlank
-//    @Size(min=3, max = 50)
-//    private String name;
-//
-//    @NotBlank
-//    @Size(min=3, max = 50)
-//    private String username;
+
 //
 //    @NaturalId
 //    @NotBlank
