@@ -42,7 +42,7 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
-    // Generate JWT token
+
     @Override
     public String loginUser(UserLoginRequest request) {
         // Retrieve user from the database based on the username
@@ -61,6 +61,7 @@ public class UserServiceImpl implements UserService {
 
         return token;
     }
+
 
     private String generateJwtToken(String username) {
         // Set expiration time for the token (e.g., 1 hour)
