@@ -15,11 +15,13 @@ The password is encrypted using public and private keys then is stored in databa
     Spring Data JDBC
     MySQL Database
     Spring Security
+    Spring Validation
     Lombok
     Spring starter Web
     Java 17 JDK
     Embedded Tomcat 9 server
     Maven Installation
+    Swagger-UI
 
 ## Backend
 
