@@ -216,14 +216,4 @@ public class TaskController {
 //            return ResponseEntity.notFound().build();
 //        }
 //    }
-//
-//    @DeleteMapping("/{taskId}")
-//    public ResponseEntity<Void> deleteTask(@PathVariable Long taskId) {
-//        boolean isDeleted = taskService.deleteTask(taskId);
-//        if (isDeleted) {
-//            return ResponseEntity.noContent().build();
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
 }
