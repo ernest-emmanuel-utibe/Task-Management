@@ -190,20 +190,4 @@ public class TaskController {
 //        TaskResponse taskResponse = taskService.createTask(taskRequest);
 //        return ResponseEntity.status(HttpStatus.CREATED).body(taskResponse);
 //    }
-//
-//    @GetMapping
-//    public ResponseEntity<List<TaskResponse>> getAllTasks() {
-//        List<TaskResponse> taskResponses = taskService.getAllTasks();
-//        return ResponseEntity.ok(taskResponses);
-//    }
-//
-//    @GetMapping("/{taskId}")
-//    public ResponseEntity<TaskResponse> getTask(@PathVariable Long taskId) {
-//        TaskResponse taskResponse = taskService.getTask(taskId);
-//        if (taskResponse != null) {
-//            return ResponseEntity.ok(taskResponse);
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
 }
