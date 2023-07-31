@@ -177,13 +177,6 @@ public class TaskController {
 //        WorkDTO response = service.getWork(uid, pid, tid);
 //        return new ResponseEntity<WorkDTO>(response, HttpStatus.OK);
 //    }
-
-//    private final TaskService taskService;
-//
-//    @Autowired
-//    public TaskController(TaskService taskService) {
-//        this.taskService = taskService;
-//    }
 //
 //    @PostMapping("create_tasks")
 //    public ResponseEntity<TaskResponse> createTask(@RequestBody TaskRequest taskRequest) {
