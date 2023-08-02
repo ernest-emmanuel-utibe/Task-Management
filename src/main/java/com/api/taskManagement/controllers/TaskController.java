@@ -81,8 +81,7 @@ public class TaskController {
     }
 
 
-//    final String clientUrl = Client.clientUrl;
-//
+
 //    @Autowired
 //    private TaskService service;
 //
