@@ -176,10 +176,4 @@ public class TaskController {
 //        WorkDTO response = service.getWork(uid, pid, tid);
 //        return new ResponseEntity<WorkDTO>(response, HttpStatus.OK);
 //    }
-//
-//    @PostMapping("create_tasks")
-//    public ResponseEntity<TaskResponse> createTask(@RequestBody TaskRequest taskRequest) {
-//        TaskResponse taskResponse = taskService.createTask(taskRequest);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(taskResponse);
-//    }
 }
