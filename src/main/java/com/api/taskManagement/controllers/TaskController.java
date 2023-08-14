@@ -167,13 +167,4 @@ public class TaskController {
 //        service.addWork(uid, pid, tid, work.getWork());
 //        return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 //    }
-//
-//    @GetMapping("/getTaskWork/{pid}/{uid}/{tid}")
-//    @CrossOrigin(origins = clientUrl)
-//    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-//    public ResponseEntity<WorkDTO> getWork(@PathVariable("pid") Long pid, @PathVariable("uid") Long uid, @PathVariable("tid") Long tid) {
-//        // service call
-//        WorkDTO response = service.getWork(uid, pid, tid);
-//        return new ResponseEntity<WorkDTO>(response, HttpStatus.OK);
-//    }
 }
