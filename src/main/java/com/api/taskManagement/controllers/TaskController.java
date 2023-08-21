@@ -137,25 +137,4 @@ public class TaskController {
 //    public ResponseEntity<?> updateTaskStatus(@PathVariable("status") String status) {
 //        return new ResponseEntity<>(HttpStatus.OK);
 //    }
-//
-//    @GetMapping("/getTaskCalendar/{pid}/{uid}")
-//    @CrossOrigin(origins = clientUrl)
-//    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-//    public ResponseEntity<CalendarListResource> getTaskCalendar(@PathVariable("pid") Long pid, @PathVariable("uid") Long uid) {
-//        // service call
-//        TaskListResource tlr =  service.getAllTaskOfUserAndProgram(uid, pid);
-//        List<CalendarResource> cl = new ArrayList<CalendarResource>();
-//        List<Task> tl = tlr.getTaskList();
-//        for(Task t: tl) {
-//            CalendarResource cr = new CalendarResource();
-//            cr.setTitle(t.getName());
-//            cr.setStart(t.getStartTime());
-//            cr.setEnd(t.getDeadline());
-//            cl.add(cr);
-//        }
-//        CalendarListResource clr = new CalendarListResource();
-//        clr.setEvents(cl);
-//
-//        return new ResponseEntity<CalendarListResource>(clr, HttpStatus.OK);
-//    }
 }
