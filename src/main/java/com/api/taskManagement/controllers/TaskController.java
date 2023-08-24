@@ -121,20 +121,4 @@ public class TaskController {
 //        TaskRecordListResource trlr = service.getAllTaskRecord();
 //        return new ResponseEntity<TaskRecordListResource>(trlr, HttpStatus.OK);
 //    }
-//
-//    @GetMapping("/getAllTaskByProgram/{pid}")
-//    @CrossOrigin(origins = clientUrl)
-//    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-//    public ResponseEntity<TaskListResource> getAllTaskByProgram(@PathVariable("pid") Long pid) {
-//        // service call
-//        TaskListResource tlr = service.getAllTaskByProgram(pid);
-//        return new ResponseEntity<TaskListResource>(tlr, HttpStatus.OK);
-//    }
-//
-//    @PostMapping("/updateTaskStatus/{status}")
-//    @CrossOrigin(origins = clientUrl)
-//    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-//    public ResponseEntity<?> updateTaskStatus(@PathVariable("status") String status) {
-//        return new ResponseEntity<>(HttpStatus.OK);
-//    }
 }
