@@ -50,27 +50,6 @@ public class SecurityConfig {
         return security.build();
     }
 
-
-
-//    @Bean
-//    public SecurityFilterChain configure(HttpSecurity http) throws Exception {
-//        http
-//                .csrf(AbstractHttpConfigurer::disable)
-//                .authorizeHttpRequests((authz) -> {
-//                    authz.requestMatchers("/register").permitAll().anyRequest();
-//                    authz.requestMatchers("").authenticated();
-//                })
-//                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-//                .exceptionHandling(except -> except.configure(http));
-////                .oauth2Login()
-////                .loginPage("/login")
-////                .permitAll()
-////                .and()
-////                .logout()
-////                .permitAll();
-//        return http.build();
-//    }
-
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
         return configuration.getAuthenticationManager();
