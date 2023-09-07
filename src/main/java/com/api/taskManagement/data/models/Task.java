@@ -62,7 +62,4 @@ public class Task {
 //    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 //    private LocalDateTime modifiedTime;
 //    private String status;
-//
-//    @Column(length = 65450, columnDefinition = "text")
-//    private String description;
 }
