@@ -80,15 +80,6 @@ public class TaskController {
         return new ResponseEntity<>(filteredTasks, HttpStatus.OK);
     }
 
-//    @GetMapping("/getAllTaskRecordByUser/{pid}/{uid}")
-//    @CrossOrigin(origins = clientUrl)
-//    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-//    public ResponseEntity<TaskRecordListResource> getAllTaskRecordByUser(@PathVariable("pid") Long pid, @PathVariable("uid") Long uid) {
-//        // service call
-//        TaskRecordListResource trlr = service.getAllTaskRecordOfUserAndProgram(uid, pid);
-//        return new ResponseEntity<TaskRecordListResource>(trlr, HttpStatus.OK);
-//    }
-//
 //    @GetMapping("/getAllTaskByUser/{pid}/{uid}")
 //    @CrossOrigin(origins = clientUrl)
 //    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
