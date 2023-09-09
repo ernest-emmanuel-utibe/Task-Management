@@ -80,21 +80,6 @@ public class TaskController {
         return new ResponseEntity<>(filteredTasks, HttpStatus.OK);
     }
 
-
-
-//    @Autowired
-//    private TaskService service;
-//
-//    @PostMapping("/createTask")
-//    @CrossOrigin(origins = clientUrl)
-//    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-//    public ResponseEntity<Boolean> createTask(@RequestBody NewTaskDTO newTaskDto) {
-//        Task task = new Task();
-//        BeanUtils.copyProperties(newTaskDto.getTask(), task);
-//        service.createTask(task, newTaskDto.getUser());
-//        return new ResponseEntity<Boolean>(true,HttpStatus.OK);
-//    }
-//
 //    @GetMapping("/getAllTaskRecordByUser/{pid}/{uid}")
 //    @CrossOrigin(origins = clientUrl)
 //    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
