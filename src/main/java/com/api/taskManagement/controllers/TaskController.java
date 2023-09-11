@@ -79,13 +79,4 @@ public class TaskController {
         List<TaskResponse> filteredTasks = taskService.filterTasks(dueDate, status);
         return new ResponseEntity<>(filteredTasks, HttpStatus.OK);
     }
-
-//    @GetMapping("/getAllTaskByUser/{pid}/{uid}")
-//    @CrossOrigin(origins = clientUrl)
-//    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-//    public ResponseEntity<TaskListResource> getAllTaskByUser(@PathVariable("pid") Long pid, @PathVariable("uid") Long uid) {
-//        // service call
-//        TaskListResource tlr = service.getAllTaskOfUserAndProgram(uid, pid);
-//        return new ResponseEntity<TaskListResource>(tlr, HttpStatus.OK);
-//    }
 }
