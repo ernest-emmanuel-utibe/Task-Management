@@ -93,19 +93,6 @@
 //        assertThrows(RuntimeException.class, () -> userService.loginUser(request));
 //    }
 //
-//    @Test
-//    public void loginUser_InvalidPassword_ThrowsException() {
-//        // Prepare test data
-//        UserLoginRequest request = new UserLoginRequest();
-//        request.setUsername("testuser");
-//        request.setPassword("password123");
-//
-//        User user = new User();
-//        user.setUsername("testuser");
-//        user.setPassword("$2a$10$R91u..y..9vMA7E65Y2PKOelHfUnFr.GN6bpYOMqG2TRGnlTfYyc.");
-//
-//        Mockito.when(userRepository.findByUsername(request.getUsername())).thenReturn(user);
-//        Mockito.when(passwordEncoder.matches(request.getPassword(), user.getPassword())).thenReturn(false);
 //
 //        // Execute and assert
 //        assertThrows(RuntimeException.class, () -> userService.loginUser(request));
