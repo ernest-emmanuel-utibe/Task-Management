@@ -92,9 +92,3 @@
 //        // Execute and assert
 //        assertThrows(RuntimeException.class, () -> userService.loginUser(request));
 //    }
-//
-//
-//        // Execute and assert
-//        assertThrows(RuntimeException.class, () -> userService.loginUser(request));
-//    }
-//}
