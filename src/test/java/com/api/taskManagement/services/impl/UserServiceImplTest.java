@@ -26,23 +26,6 @@
 //    @InjectMocks
 //    private UserServiceImpl userService;
 //
-//
-//    @Test
-//    public void registerUser_NewUsername_SuccessfullyRegistersUser() {
-//        // Prepare test data
-//        UserRegistrationRequest request = new UserRegistrationRequest();
-//        request.setUsername("testuser");
-//        request.setPassword("password123");
-//
-//        Mockito.when(userRepository.findByUsername(request.getUsername())).thenReturn(null);
-//
-//        // Execute the method
-//        userService.registerUser(request);
-//
-//        // Verify the method calls
-//        Mockito.verify(userRepository, Mockito.times(1)).save(Mockito.any(User.class));
-//    }
-//
 //    @Test
 //    public void registerUser_ExistingUsername_ThrowsException() {
 //        // Prepare test data
