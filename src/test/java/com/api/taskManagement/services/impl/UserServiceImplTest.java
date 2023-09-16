@@ -62,16 +62,3 @@
 //        // Assert the result
 //        assertEquals("JWT_TOKEN", jwtToken);
 //    }
-//
-//    @Test
-//    public void loginUser_InvalidUsername_ThrowsException() {
-//        // Prepare test data
-//        UserLoginRequest request = new UserLoginRequest();
-//        request.setUsername("testuser");
-//        request.setPassword("password123");
-//
-//        Mockito.when(userRepository.findByUsername(request.getUsername())).thenReturn(null);
-//
-//        // Execute and assert
-//        assertThrows(RuntimeException.class, () -> userService.loginUser(request));
-//    }
