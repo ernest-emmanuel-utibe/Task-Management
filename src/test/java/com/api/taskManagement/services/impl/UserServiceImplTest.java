@@ -23,25 +23,6 @@
 //    @Mock
 //    private PasswordEncoder passwordEncoder;
 //
-//    @InjectMocks
-//    private UserServiceImpl userService;
-//
-//    @Test
-//    public void registerUser_ExistingUsername_ThrowsException() {
-//        // Prepare test data
-//        UserRegistrationRequest request = new UserRegistrationRequest();
-//        request.setUsername("testuser");
-//        request.setPassword("password123");
-//
-//        User existingUser = new User();
-//        existingUser.setUsername("testuser");
-//
-//        Mockito.when(userRepository.findByUsername(request.getUsername())).thenReturn(existingUser);
-//
-//        // Execute and assert
-//        assertThrows(RuntimeException.class, () -> userService.registerUser(request));
-//    }
-//
 //    @Test
 //    public void loginUser_ValidCredentials_ReturnsJwtToken() {
 //        // Prepare test data
