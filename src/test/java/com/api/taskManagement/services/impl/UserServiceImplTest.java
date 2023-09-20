@@ -18,11 +18,4 @@
 //@RunWith(MockitoJUnitRunner.class)
 //public class UserServiceImplTest {
 //    @Mock
-//    private UserRepository userRepository;
-//
-//    @Mock
-//    private PasswordEncoder passwordEncoder;
-//
-//        // Assert the result
-//        assertEquals("JWT_TOKEN", jwtToken);
-//    }
+
