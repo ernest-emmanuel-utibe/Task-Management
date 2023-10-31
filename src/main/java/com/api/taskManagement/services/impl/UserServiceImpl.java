@@ -65,12 +65,12 @@ public class UserServiceImpl implements UserService {
 
     private String generateJwtToken(String username) {
         // Set expiration time for the token (e.g., 1 hour)
-        long expirationTimeInMillis = 60 * 60 * 1000; // 1 hour
+        long expirationTimeInMillis = 60 * 60 * 1000;
         Date expiryDate = new Date(System.currentTimeMillis() + expirationTimeInMillis);
 
         // Create claims for the token
         Claims claims = Jwts.claims().setSubject(username);
-        claims.put("scopes", Arrays.asList("ROLE_USER")); // Set user roles/scopes if needed
+        claims.put("scopes", Arrays.asList("ROLE_USER"));
 
         // Generate the token
         String token = Jwts.builder()
