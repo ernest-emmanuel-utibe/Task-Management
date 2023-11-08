@@ -60,6 +60,4 @@ public class Task {
 //    private long modifiedBy;
 //
 //    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
-//    private LocalDateTime modifiedTime;
-//    private String status;
 }
