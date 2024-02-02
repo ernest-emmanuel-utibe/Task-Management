@@ -26,6 +26,7 @@ public class UserController {
             return ResponseEntity.badRequest().body("Failed to register user");
         }
     }
+    
 
     @PostMapping("/login")
     public ResponseEntity<?> loginUser(@RequestBody UserLoginRequest request) {
