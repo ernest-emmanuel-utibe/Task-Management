@@ -26,6 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void registerUser(UserRegistrationRequest request) {
+        
         // Check if the username is already taken
         if (userRepository.findByUsername(request.getUsername()) != null) {
             throw new RuntimeException("Username already exists");
